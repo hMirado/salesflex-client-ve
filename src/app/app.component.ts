@@ -4,7 +4,7 @@ import {TopbarComponent} from "./layout/topbar/topbar.component";
 import {SidebarComponent} from "./layout/sidebar/sidebar.component";
 import {FooterComponent} from "./layout/footer/footer.component";
 import {CommonModule} from "@angular/common";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {BreadcrumbComponent} from "./modules/shared/components/breadcrumb/breadcrumb.component";
 
 @Component({
   selector: 'app-root',
@@ -15,6 +15,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     TopbarComponent,
     SidebarComponent,
     FooterComponent,
+    BreadcrumbComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

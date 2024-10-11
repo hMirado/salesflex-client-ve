@@ -1,4 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-@import "primeng/resources/themes/lara-light-blue/theme.css";
-@import "primeng/resources/primeng.css";
-@import "primeicons/primeicons.css";
+@import "./assets/scss/_variables";
+@import "./assets/scss/_mixins";
+@import "./assets/scss/_main";
+@import "./assets/scss/_content";
+@import "./assets/scss/_responsive";
+@import "./assets/scss/_utils";
+@import "./assets/scss/_typography";
+
+@import "../node_modules/primeng/resources/themes/lara-light-blue/theme.css";
+@import "../node_modules/primeflex/primeflex.scss";
+@import "../node_modules/primeng/resources/primeng.css";
+@import "../node_modules/primeicons/primeicons.css";

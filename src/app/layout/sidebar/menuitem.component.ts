@@ -12,11 +12,6 @@ import {RouterModule} from "@angular/router";
       <div *ngIf="root && item.visible !== false" class="layout-menuitem-root-text">
         {{item.label}}
       </div>
-      <a *ngIf="(!item.routerLink || item.items) && item.visible !== false" [attr.href]="item.url" [ngClass]="item.class" [attr.target]="item.target" tabindex="0" pRipple>
-        <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
-        <span class="layout-menuitem-text">{{item.label}}</span>
-        <i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
-      </a>
       <a *ngIf="(item.routerLink && !item.items) && item.visible !== false" [ngClass]="item.class"
          [routerLink]="item.routerLink" routerLinkActive="active-route" [routerLinkActiveOptions]="item.routerLinkActiveOptions||{ paths: 'exact', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'ignored' }"
          [fragment]="item.fragment" [queryParamsHandling]="item.queryParamsHandling" [preserveFragment]="item.preserveFragment"
@@ -74,5 +69,18 @@ export class MenuitemComponent {
   @HostBinding('class.active-menuitem')
   get activeClass() {
     return this.active && !this.root;
+  }
+
+  itemClick(event: Event) {
+    // avoid processing disabled items
+    if (this.item.disabled) {
+      event.preventDefault();
+      return;
+    }
+
+    // execute command
+    if (this.item.command) {
+      this.item.command({ originalEvent: event, item: this.item });
+    }
   }
 }
