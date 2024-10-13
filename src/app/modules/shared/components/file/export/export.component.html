@@ -1,0 +1,5 @@
+<ng-container *ngIf="id == exportConfig.id" >
+    <p-button class="p-0" [outlined]="true" [severity]="exportConfig.color" (onClick)="export()" [size]="'small'">
+        <img src="../../../../../../assets/images/svg/{{exportConfig.icon}}">
+    </p-button>
+</ng-container>
