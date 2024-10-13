@@ -35,12 +35,13 @@ export class SidebarComponent {
         items: [
           { label: 'Order', icon: 'pi pi-fw pi-shopping-cart', routerLink: ['/blocks'] },
           { label: 'Delivery', icon: 'pi pi-fw pi-truck', routerLink: ['/blocks'] },
-          { label: 'Facture', icon: 'pi pi-fw pi-file', routerLink: ['/blocks'] },
+          { label: 'Receipt', icon: 'pi pi-fw pi-file', routerLink: ['/blocks'] },
         ]
       },
       {
-        label: 'Users',
+        label: 'Settings',
         items: [
+          { label: 'Company', icon: 'pi pi-fw pi-sliders-h', routerLink: ['/utilities/icons'] },
           { label: 'Profile', icon: 'pi pi-fw pi-address-book', routerLink: ['/utilities/icons'] },
           { label: 'User', icon: 'pi pi-fw pi-user', routerLink: ['/blocks'] },
         ]

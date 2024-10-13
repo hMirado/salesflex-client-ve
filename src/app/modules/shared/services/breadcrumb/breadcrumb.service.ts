@@ -7,7 +7,7 @@ import {Subject, BehaviorSubject} from "rxjs";
 })
 export class BreadcrumbService {
 
-  $menuItems = new BehaviorSubject<Breadcrumb[]>([]);
+  $menuItems = new Subject<Breadcrumb[]>();
 
   constructor() { }
 

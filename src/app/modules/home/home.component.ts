@@ -6,6 +6,8 @@ import {Item} from "../shared/models/item";
 import {ITEMS} from "../../../assets/demo/constant";
 import {ChartModule} from "primeng/chart";
 import {window} from "rxjs/operators";
+import { Breadcrumb } from '../shared/models/breadcrumb';
+import { BreadcrumbService } from '../shared/services/breadcrumb/breadcrumb.service';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +23,7 @@ export class HomeComponent implements OnInit, AfterViewInit  {
   public chartData: any;
   public chartOptions: any;
 
-  constructor(private elementRef: ElementRef, private renderer2: Renderer2) {
+  constructor(private breadcrumbService: BreadcrumbService) {
     this.orderToDay = {
       title: 'Total today Order',
       subTitle: '100',
@@ -39,6 +41,8 @@ export class HomeComponent implements OnInit, AfterViewInit  {
   }
 
   ngOnInit(): void {
+    const menuItems: Breadcrumb[] = [];
+    this.breadcrumbService.setMenuItem(menuItems);
     this.items = ITEMS;
     this.initChart();
   }

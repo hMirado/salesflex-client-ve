@@ -5,11 +5,12 @@ import {BreadcrumbModule} from "primeng/breadcrumb";
 import {RouterModule} from "@angular/router";
 import {BreadcrumbService} from "../../services/breadcrumb/breadcrumb.service";
 import {Subscription} from "rxjs";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-breadcrumb',
   standalone: true,
-  imports: [BreadcrumbModule, RouterModule ],
+  imports: [BreadcrumbModule, RouterModule, CommonModule ],
   templateUrl: './breadcrumb.component.html',
   styleUrl: './breadcrumb.component.scss'
 })

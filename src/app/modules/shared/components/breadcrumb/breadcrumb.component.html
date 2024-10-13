@@ -1,7 +1,12 @@
-<div class="">
-  <p-breadcrumb
-    class="max-w-full"
-    [model]="menuItems"
-  >
-  </p-breadcrumb>
+<div *ngIf="menuItems.length > 0">
+  <div class="flex justify-content-between">
+    <div class="flex flex-column" style="padding: 1rem;">
+      <h5>Item Classification</h5>
+    </div>
+    <p-breadcrumb
+      class="max-w-full"
+      [model]="menuItems"
+    >
+    </p-breadcrumb>
+  </div>
 </div>
