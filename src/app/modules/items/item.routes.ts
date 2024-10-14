@@ -1,6 +1,7 @@
 import { Routes } from "@angular/router";
 import {ClassificationComponent} from "./classification/classification.component";
 import {CreateComponent as CreateClassificationComponent} from "./classification/create/create.component";
+import {HttpClientModule} from "@angular/common/http";
 
 export const ITEM_ROUTES: Routes = [
   {

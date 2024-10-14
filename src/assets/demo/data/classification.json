@@ -1,0 +1,182 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "classificationKey": "CAT",
+      "classificationName": "Category",
+      "classificationIsMandatory": true,
+      "subClassification": [
+        {
+          "id": 1,
+          "classificationValueKey": "INFO",
+          "classificationValueName": "Informatics"
+        },
+        {
+          "id": 2,
+          "classificationValueKey": "MOB",
+          "classificationValueName": "Office furniture"
+        },
+        {
+          "id": 3,
+          "classificationValueKey": "OTHER",
+          "classificationValueName": "OTHER"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "classificationKey": "TYPE",
+      "classificationName": "Types",
+      "classificationIsMandatory": false,
+      "subClassification": [
+        {
+          "id": 1,
+          "classificationValueKey": "PC",
+          "classificationValueName": "PC"
+        },
+        {
+          "id": 2,
+          "classificationValueKey": "EC",
+          "classificationValueName": "Monitor"
+        },
+        {
+          "id": 3,
+          "classificationValueKey": "FW",
+          "classificationValueName": "Firewall"
+        },
+        {
+          "id": 4,
+          "classificationValueKey": "CLM",
+          "classificationValueName": "Climatisation"
+        },
+        {
+          "id": 5,
+          "classificationValueKey": "TAB",
+          "classificationValueName": "Table"
+        },
+        {
+          "id": 6,
+          "classificationValueKey": "ON",
+          "classificationValueName": "Onduleur"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "classificationKey": "BRAND",
+      "classificationName": "BRAND",
+      "classificationIsMandatory": false,
+      "subClassification": [
+        {
+          "id": 1,
+          "classificationValueKey": "LENOVO",
+          "classificationValueName": "Lenovo"
+        },
+        {
+          "id": 2,
+          "classificationValueKey": "HP",
+          "classificationValueName": "HP"
+        },
+        {
+          "id": 3,
+          "classificationValueKey": "ACER",
+          "classificationValueName": "ACER"
+        },
+        {
+          "id": 4,
+          "classificationValueKey": "APPLE",
+          "classificationValueName": "APPLE"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "classificationKey": "CAT",
+      "classificationName": "Category",
+      "classificationIsMandatory": true,
+      "subClassification": [
+        {
+          "id": 1,
+          "classificationValueKey": "INFO",
+          "classificationValueName": "Informatics"
+        },
+        {
+          "id": 2,
+          "classificationValueKey": "MOB",
+          "classificationValueName": "Office furniture"
+        },
+        {
+          "id": 3,
+          "classificationValueKey": "OTHER",
+          "classificationValueName": "OTHER"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "classificationKey": "TYPE",
+      "classificationName": "Types",
+      "classificationIsMandatory": false,
+      "subClassification": [
+        {
+          "id": 1,
+          "classificationValueKey": "PC",
+          "classificationValueName": "PC"
+        },
+        {
+          "id": 2,
+          "classificationValueKey": "EC",
+          "classificationValueName": "Monitor"
+        },
+        {
+          "id": 3,
+          "classificationValueKey": "FW",
+          "classificationValueName": "Firewall"
+        },
+        {
+          "id": 4,
+          "classificationValueKey": "CLM",
+          "classificationValueName": "Climatisation"
+        },
+        {
+          "id": 5,
+          "classificationValueKey": "TAB",
+          "classificationValueName": "Table"
+        },
+        {
+          "id": 6,
+          "classificationValueKey": "ON",
+          "classificationValueName": "Onduleur"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "classificationKey": "BRAND",
+      "classificationName": "BRAND",
+      "classificationIsMandatory": false,
+      "subClassification": [
+        {
+          "id": 1,
+          "classificationValueKey": "LENOVO",
+          "classificationValueName": "Lenovo"
+        },
+        {
+          "id": 2,
+          "classificationValueKey": "HP",
+          "classificationValueName": "HP"
+        },
+        {
+          "id": 3,
+          "classificationValueKey": "ACER",
+          "classificationValueName": "ACER"
+        },
+        {
+          "id": 4,
+          "classificationValueKey": "APPLE",
+          "classificationValueName": "APPLE"
+        }
+      ]
+    }
+  ]
+}

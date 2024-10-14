@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import {HomeComponent} from "./modules/home/home.component";
+import {HttpClientModule} from "@angular/common/http";
 
 export const routes: Routes = [
   {
@@ -12,6 +13,6 @@ export const routes: Routes = [
   },
   {
     path: 'classification',
-    loadChildren: () => import('./modules/items/item.routes').then(m => m.ITEM_ROUTES)
+    loadChildren: () => import('./modules/items/item.routes').then(m => m.ITEM_ROUTES),
   }
 ];

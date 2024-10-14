@@ -6,15 +6,71 @@
 </div>
 
 <div class="card mt-3" style="min-height: 35rem;">
-    <p-table [scrollable]="true"[scrollable]="true" 
-    scrollHeight="400px" 
-    [tableStyle]="{'min-width': '50rem'}" >
+    <p-table
+      [value]="classifications"
+      dataKey="classificationKey" [expandedRowKeys]="expandedRows"
+      scrollHeight="400px"
+      [tableStyle]="{'min-width': '50rem'}"
+      [paginator]="true"
+      [rows]="10"
+      [rowsPerPageOptions]="[10, 25, 50]"
+    >
         <ng-template pTemplate="header">
             <tr>
+                <th>Code</th>
                 <th>Classification</th>
                 <th>Sub-classification</th>
                 <th>Actions</th>
             </tr>
+        </ng-template>
+        <ng-template  pTemplate="body" let-classification let-rowIndex="rowIndex" let-expanded="expanded">
+            <tr>
+                <td style="width:20%">
+                  <button
+                    type="button"
+                    pButton
+                    [pRowToggler]="classification"
+                    class="p-button-text p-button-rounded p-button-plain mr-2"
+                    style="padding: 0 !important; width: 1rem !important; height: 1rem !important;"
+                    [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'">
+                  </button>
+                  <span class="font-bold ml-2">{{ classification.classificationKey }}</span>
+                </td>
+                <td style="width:20%">
+                  <span class="font-bold ml-2">{{ classification.classificationName }}</span>
+                </td>
+                <td style="width:40%"></td>
+                <td  class="flex-wrap gap-2 flex justify-content-start">
+                  <p-button size="small" icon="pi pi-pencil" [rounded]="true" [text]="true" [raised]="true" severity="primary"></p-button>
+                  <p-button size="small" icon="pi pi-times" [rounded]="true" [text]="true" [raised]="true" severity="danger"></p-button>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="rowexpansion" let-classification>
+          <tr>
+            <td colspan="4">
+              <div class="">
+                <p-table [value]="classification.subClassification" dataKey="subClassification.classificationValueKey">
+                  <ng-template pTemplate="body" let-subClassification>
+                    <tr>
+                        <td style="width:20%">{{ subClassification.classificationValueKey }}</td>
+                        <td style="width:20%"></td>
+                        <td style="width:40%"> {{ subClassification.classificationValueName }} </td>
+                      <td  class="flex-wrap gap-2 flex justify-content-start">
+                        <p-button size="small" icon="pi pi-pencil" [rounded]="true" [text]="true" [raised]="true" severity="primary"></p-button>
+                        <p-button size="small" icon="pi pi-times" [rounded]="true" [text]="true" [raised]="true" severity="danger"></p-button>
+                      </td>
+                    </tr>
+                  </ng-template>
+                  <ng-template pTemplate="emptymessage">
+                    <tr>
+                      <td colspan="4">There are no order for this product yet.</td>
+                    </tr>
+                  </ng-template>
+                </p-table>
+              </div>
+            </td>
+          </tr>
         </ng-template>
     </p-table>
 </div>

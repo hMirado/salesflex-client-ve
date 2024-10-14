@@ -8,6 +8,12 @@ import { ExportComponent } from '../../shared/components/file/export/export.comp
 import { Export } from '../../shared/models/export';
 import { Color } from '../../shared/models/color';
 import { TableModule } from 'primeng/table';
+import {Classification} from "../../shared/models/classification";
+import {ClassificationService} from "../../shared/services/classification/classification.service";
+
+interface expandedRows {
+  [key: string]: boolean;
+}
 
 @Component({
   selector: 'app-classification',
@@ -19,8 +25,10 @@ import { TableModule } from 'primeng/table';
 export class ClassificationComponent implements OnInit{
   public exportExcel!: Export;
   public exportPdf!: Export;
+  public classifications: Classification[] = [];
+  expandedRows: expandedRows = {};
 
-  constructor(private breadcrumbService: BreadcrumbService) {
+  constructor(private breadcrumbService: BreadcrumbService, private classificationService: ClassificationService) {
   }
 
   ngOnInit(): void {
@@ -36,7 +44,7 @@ export class ClassificationComponent implements OnInit{
       file: '',
       label: '',
       color: Color.Success
-    }
+    };
     this.exportPdf = {
       id: 'pdf',
       icon: 'pdf.svg',
@@ -44,5 +52,13 @@ export class ClassificationComponent implements OnInit{
       label: '',
       color: Color.Danger
     }
+
+    this.getClassifications();
+  }
+
+  getClassifications() {
+    this.classificationService.getClassifications().then(data => {
+      this.classifications = data
+    });
   }
 }
