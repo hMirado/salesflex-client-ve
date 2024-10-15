@@ -1,7 +1,7 @@
-<div *ngIf="menuItems.length > 0">
+<div *ngIf="menuItems && menuItems.length > 0">
   <div class="flex justify-content-between">
     <div class="flex flex-column" style="padding: 1rem;">
-      <h5>Item Classification</h5>
+      <h5>{{ title }}</h5>
     </div>
     <p-breadcrumb
       class="max-w-full"

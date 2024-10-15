@@ -11,3 +11,21 @@
 @import "../node_modules/primeflex/primeflex.scss";
 @import "../node_modules/primeng/resources/primeng.css";
 @import "../node_modules/primeicons/primeicons.css";
+
+.action {
+    padding: 2px
+}
+
+.action:hover {
+    cursor: pointer;
+}
+
+.bg-orange {
+    background-color: #edb815;
+    color: #ffffff;
+}
+
+.bg-success {
+    background-color: #22c55e;
+    color: #ffffff;
+}

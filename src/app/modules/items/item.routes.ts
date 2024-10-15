@@ -1,27 +1,12 @@
-import { Routes } from "@angular/router";
-import {ClassificationComponent} from "./classification/classification.component";
-import {CreateComponent as CreateClassificationComponent} from "./classification/create/create.component";
-import {HttpClientModule} from "@angular/common/http";
+import {Routes} from "@angular/router";
 
 export const ITEM_ROUTES: Routes = [
-  {
-    path: '',
-    pathMatch: "full",
-    redirectTo: ''
-  },
-  {
-    path: '',
-    component: ClassificationComponent,
-    children: [
-      {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'classification'
-      },
-      {
-        path: 'create',
-        component: CreateClassificationComponent
-      }
-    ]
-  }
+    {
+        path: 'item',
+        loadComponent: () => import('./pages/item/item.component').then((component) => component.ItemComponent)
+    },
+    {
+        path: 'classification',
+        loadComponent: () => import('./pages/classification/classification.component').then((component) => component.ClassificationComponent)
+    }
 ];

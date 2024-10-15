@@ -1,17 +1,17 @@
 import {Injectable} from '@angular/core';
-import {Breadcrumb} from "../../models/breadcrumb";
-import {Subject, BehaviorSubject} from "rxjs";
+import {Header} from "../../models/breadcrumb";
+import {Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class BreadcrumbService {
 
-  $menuItems = new Subject<Breadcrumb[]>();
+  head$ = new Subject<Header | null>();
 
   constructor() { }
 
-  setMenuItem(menuItmes: Breadcrumb[]): void {
-    this.$menuItems.next(menuItmes);
+  setHeader(head: Header | null): void {
+    this.head$.next(head);
   }
 }

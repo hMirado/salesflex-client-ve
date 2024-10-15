@@ -1,0 +1,48 @@
+<div class="card mt-3 flex flex-wrap gap-3 justify-content-between">
+    <div>
+        <div class="bg-primary mt-2 p-2 border-1 surface-border border-round w-25rem font-bold text-center">
+            NEW ORDER
+        </div>
+        <div class="scrollable-div mt-2 p-2 border-1 surface-border border-round w-25rem h-30rem">
+            <p-panel *ngFor="let order of newOrder; let i = index;" class="m-1" [toggleable]="true"
+                     pDraggable (onDragStart)="dragStart(order)"  (onDragEnd)="dragEnd()"
+            >
+                <ng-template pTemplate="header">
+                    <div class="flex align-items-baseline gap-2">
+                        <span class="font-bold">
+                            Order N. {{order.orderRef}}
+                        </span>
+                        <span class="text-sm">{{ order.orderDate }}</span>
+                    </div>
+                </ng-template>
+            </p-panel>
+        </div>
+    </div>
+    <div>
+        <div class="bg-orange mt-2 p-2 border-1 surface-border border-round w-25rem font-bold text-center">
+            ON DELIVERY
+        </div>
+        <div class="scrollable-div mt-2 p-2 border-1 surface-border border-round w-25rem h-30rem" pDroppable (onDrop)="drop()">
+            <p-panel *ngFor="let order of processingOrder; let i = index;" class="m-1" [toggleable]="true"
+                     pDraggable (onDragStart)="dragStart(order)"  (onDragEnd)="dragEnd()"
+            >
+                <ng-template pTemplate="header">
+                    <div class="flex align-items-baseline gap-2">
+                        <span class="font-bold">
+                            Order N. {{order.orderRef}}
+                        </span>
+                        <span class="text-sm">{{ order.orderDate }}</span>
+                    </div>
+                </ng-template>
+            </p-panel>
+        </div>
+    </div>
+    <div>
+        <div class="bg-success mt-2 p-2 border-1 surface-border border-round w-25rem font-bold text-center">
+            DELIVERED
+        </div>
+        <div class="mt-2 p-2 border-1 surface-border border-round w-25rem h-30rem">
+
+        </div>
+    </div>
+</div>

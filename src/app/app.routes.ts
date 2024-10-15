@@ -1,18 +1,20 @@
 import { Routes } from '@angular/router';
-import {HomeComponent} from "./modules/home/home.component";
-import {HttpClientModule} from "@angular/common/http";
 
 export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    loadComponent: () => import('./modules/home/pages/home.component').then((component) => component.HomeComponent)
   },
   {
     path: 'home',
-    component: HomeComponent
+    loadComponent: () => import('./modules/home/pages/home.component').then((component) => component.HomeComponent)
   },
   {
-    path: 'classification',
+    path: '',
     loadChildren: () => import('./modules/items/item.routes').then(m => m.ITEM_ROUTES),
+  },
+  {
+    path: '',
+    loadChildren: () => import('./modules/sales/sale.route').then(m => m.SALE_ROUTES)
   }
 ];

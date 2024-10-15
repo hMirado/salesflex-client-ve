@@ -1,11 +1,12 @@
 import {Component, computed, effect, Input, OnDestroy, OnInit} from '@angular/core';
-import {Breadcrumb} from "../../models/breadcrumb";
+import {Breadcrumb, Header} from "../../models/breadcrumb";
 import {MenuItem} from "primeng/api";
 import {BreadcrumbModule} from "primeng/breadcrumb";
 import {RouterModule} from "@angular/router";
 import {BreadcrumbService} from "../../services/breadcrumb/breadcrumb.service";
 import {Subscription} from "rxjs";
 import { CommonModule } from '@angular/common';
+import {filter} from "rxjs/operators";
 
 @Component({
   selector: 'app-breadcrumb',
@@ -15,6 +16,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './breadcrumb.component.scss'
 })
 export class BreadcrumbComponent implements OnInit, OnDestroy {
+  public title: string = '';
   public menuItems: MenuItem[] = [];
   private subscriber = new Subscription();
 
@@ -27,8 +29,15 @@ export class BreadcrumbComponent implements OnInit, OnDestroy {
 
   getMenu() {
     this.subscriber.add(
-      this.breadcrumbService.$menuItems.subscribe((menus: Breadcrumb[]) => {
-        this.menuItems = menus
+      this.breadcrumbService.head$.pipe(
+        filter(header => {
+          this.title = '';
+          this.menuItems = [];
+          return header != null
+        })
+      ).subscribe((header: Header) => {
+        this.menuItems = header.breadcrumds;
+        this.title = header.title
       })
     )
   }

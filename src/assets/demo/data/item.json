@@ -1,0 +1,259 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "itemCode": "98-6898782",
+      "itemName": "Sun - Dried Tomatoes",
+      "itemTarif": [
+        {
+          "id": 1,
+          "itemPriceHt": 4000.0,
+          "tva": 20.0,
+          "tarifType": {
+            "id": 1,
+            "tarifCode": "TP",
+            "tarifName": "Tarif public"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "itemCode": "46-0490453",
+      "itemName": "Sausage - Breakfast",
+      "itemTarif": [
+        {
+          "id": 2,
+          "itemPriceHt": 9000.0,
+          "tva": 20.0,
+          "tarifType": {
+            "id": 1,
+            "tarifCode": "TP",
+            "tarifName": "Tarif public"
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "itemCode": "68-2596372",
+      "itemName": "Glucose",
+      "itemTarif": [
+        {
+          "id": 3,
+          "itemPriceHt": 2700.0,
+          "tva": 20.0,
+          "tarifType": {
+            "id": 1,
+            "tarifCode": "TP",
+            "tarifName": "Tarif public"
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "itemCode": "09-3138793",
+      "itemName": "Wine - Duboeuf Beaujolais",
+      "itemTarif": [
+        {
+          "id": 4,
+          "itemPriceHt": 4650.0,
+          "tva": 20.0,
+          "tarifType": {
+            "id": 1,
+            "tarifCode": "TP",
+            "tarifName": "Tarif public"
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "itemCode": "74-1198454",
+      "itemName": "Pepper - Orange",
+      "itemTarif": [
+        {
+          "id": 5,
+          "itemPriceHt": 4000.0,
+          "tva": 20.0,
+          "tarifType": {
+            "id": 1,
+            "tarifCode": "TP",
+            "tarifName": "Tarif public"
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "itemCode": "24-2277542",
+      "itemName": "Tuna - Salad Premix",
+      "itemTarif": [
+        {
+          "id": 6,
+          "itemPriceHt": 1200.0,
+          "tva": 20.0,
+          "tarifType": {
+            "id": 1,
+            "tarifCode": "TP",
+            "tarifName": "Tarif public"
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "itemCode": "43-2542479",
+      "itemName": "Glove - Cutting",
+      "itemTarif": [
+        {
+          "id": 7,
+          "itemPriceHt": 2000.0,
+          "tva": 20.0,
+          "tarifType": {
+            "id": 1,
+            "tarifCode": "TP",
+            "tarifName": "Tarif public"
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "itemCode": "41-6609657",
+      "itemName": "Island Oasis - Sweet And Sour Mix",
+      "itemTarif": [
+        {
+          "id": 8,
+          "itemPriceHt": 2500.0,
+          "tva": 20.0,
+          "tarifType": {
+            "id": 1,
+            "tarifCode": "TP",
+            "tarifName": "Tarif public"
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "itemCode": "08-8164479",
+      "itemName": "Chips Potato Reg 43g",
+      "itemTarif": [
+        {
+          "id": 9,
+          "itemPriceHt": 15000.0,
+          "tva": 20.0,
+          "tarifType": {
+            "id": 1,
+            "tarifCode": "TP",
+            "tarifName": "Tarif public"
+          }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "itemCode": "34-1034943",
+      "itemName": "Beef - Tongue, Cooked",
+      "itemTarif": [
+        {
+          "id": 10,
+          "itemPriceHt": 9000.0,
+          "tva": 20.0,
+          "tarifType": {
+            "id": 1,
+            "tarifCode": "TP",
+            "tarifName": "Tarif public"
+          }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "itemCode": "74-2747912",
+      "itemName": "Wine - Pinot Noir Stoneleigh",
+      "itemTarif": [
+        {
+          "id": 11,
+          "itemPriceHt": 10000.0,
+          "tva": 20.0,
+          "tarifType": {
+            "id": 1,
+            "tarifCode": "TP",
+            "tarifName": "Tarif public"
+          }
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "itemCode": "96-5006194",
+      "itemName": "Garbag Bags - Black",
+      "itemTarif": [
+        {
+          "id": 12,
+          "itemPriceHt": 4000.0,
+          "tva": 20.0,
+          "tarifType": {
+            "id": 1,
+            "tarifCode": "TP",
+            "tarifName": "Tarif public"
+          }
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "itemCode": "85-6253758",
+      "itemName": "Figs",
+      "itemTarif": [
+        {
+          "id": 13,
+          "itemPriceHt": 4900.0,
+          "tva": 20.0,
+          "tarifType": {
+            "id": 1,
+            "tarifCode": "TP",
+            "tarifName": "Tarif public"
+          }
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "itemCode": "00-0481988",
+      "itemName": "Beer - Original Organic Lager",
+      "itemTarif": [
+        {
+          "id": 14,
+          "itemPriceHt": 4000.0,
+          "tva": 20.0,
+          "tarifType": {
+            "id": 1,
+            "tarifCode": "TP",
+            "tarifName": "Tarif public"
+          }
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "itemCode": "93-4217845",
+      "itemName": "Nut - Almond, Blanched, Sliced",
+      "itemTarif": [
+        {
+          "id": 15,
+          "itemPriceHt": 5700.0,
+          "tva": 20.0,
+          "tarifType": {
+            "id": 1,
+            "tarifCode": "TP",
+            "tarifName": "Tarif public"
+          }
+        }
+      ]
+    }
+  ]
+}

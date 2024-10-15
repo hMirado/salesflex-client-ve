@@ -1,0 +1,7 @@
+<p-dialog  header="Header" [(visible)]="visible" [modal]="true" [style]="{ width: '40rem' }">
+  <ng-template pTemplate="header">
+    <ng-content select="[header]"></ng-content>
+  </ng-template>
+  <ng-content select="[body]"></ng-content>
+  <ng-content select="[footer]" pTemplate="footer"></ng-content>
+</p-dialog>

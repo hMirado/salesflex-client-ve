@@ -1,13 +1,13 @@
 import {AfterViewInit, Component, ElementRef, Inject, OnInit, PLATFORM_ID, Renderer2} from '@angular/core';
-import {Card} from "../shared/models/card";
-import {CardComponent} from "../shared/components/card/card.component";
+import {Card} from "../../shared/models/card";
+import {CardComponent} from "../../shared/components/card/card.component";
 import {TableModule} from "primeng/table";
-import {Item} from "../shared/models/item";
-import {ITEMS} from "../../../assets/demo/constant";
+import {Item} from "../../shared/models/item";
+import {ITEMS} from "../../../../assets/demo/constant";
 import {ChartModule} from "primeng/chart";
 import {window} from "rxjs/operators";
-import { Breadcrumb } from '../shared/models/breadcrumb';
-import { BreadcrumbService } from '../shared/services/breadcrumb/breadcrumb.service';
+import { Breadcrumb } from '../../shared/models/breadcrumb';
+import { BreadcrumbService } from '../../shared/services/breadcrumb/breadcrumb.service';
 
 @Component({
   selector: 'app-home',
@@ -41,8 +41,7 @@ export class HomeComponent implements OnInit, AfterViewInit  {
   }
 
   ngOnInit(): void {
-    const menuItems: Breadcrumb[] = [];
-    this.breadcrumbService.setMenuItem(menuItems);
+    this.breadcrumbService.setHeader(null);
     this.items = ITEMS;
     this.initChart();
   }

@@ -1,0 +1,6 @@
+.scrollable-div {
+    max-height: 30rem; /* Hauteur maximale avant apparition de la scrollbar */
+    overflow-y: auto;  /* Affiche la barre de défilement verticale si nécessaire */
+    border: 1px solid #ccc; /* Optionnel : Pour visualiser les bordures */
+    padding: 10px; /* Optionnel : Pour un peu d'espacement à l'intérieur */
+}

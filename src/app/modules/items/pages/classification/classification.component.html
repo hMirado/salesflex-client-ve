@@ -1,0 +1,136 @@
+<div class="pt-3 flex flex-wrap gap-2 justify-content-end">
+    <app-export [exportConfig]="exportPdf" id="pdf"></app-export>
+    <app-export [exportConfig]="exportExcel" id="excel"></app-export>
+<!--    <a routerLink='/classification/create'>-->
+<!--      <p-button icon="pi pi-plus" label="Add New Classification"></p-button>-->
+<!--    </a>-->
+    <p-button icon="pi pi-upload" label="Import Classification" severity="contrast" onclick=""></p-button>
+</div>
+
+<div class="card mt-3" style="min-height: 35rem;">
+    <div class="mb-3 flex flex-wrap gap-2 justify-content-start">
+        <span class="font-bold mt-3">Filters : </span>
+        <span class="p-float-label">
+            <input pInputText id="key" type="text" required/>
+            <label for="key">Code</label>
+        </span>
+        <span class="p-float-label">
+            <input pInputText id="classification" type="text" required/>
+            <label for="classification">Classification</label>
+        </span>
+        <span class="p-float-label">
+            <input pInputText id="subclassification" type="text" required/>
+            <label for="subclassification">Subclassification</label>
+        </span>
+    </div>
+    <p-table
+      [value]="classifications"
+      dataKey="classificationKey"
+      scrollHeight="400px"
+      [tableStyle]="{'min-width': '50rem', 'border': '1px solid #e5e7eb'}"
+      [paginator]="true"
+      [rows]="10"
+      [rowsPerPageOptions]="[10, 25, 50]"
+    >
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Code</th>
+                <th>Classification</th>
+                <th>Sub-classification</th>
+                <th>Actions</th>
+            </tr>
+        </ng-template>
+        <ng-template  pTemplate="body" let-classification let-rowIndex="rowIndex" let-expanded="expanded">
+            <tr>
+                <td style="width:20%">
+                  <button
+                    type="button"
+                    pButton
+                    [pRowToggler]="classification"
+                    class="p-button-text p-button-rounded p-button-plain mr-2"
+                    style="padding: 0 !important; width: 1rem !important; height: 1rem !important;"
+                    [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'">
+                  </button>
+                  <span class="font-bold ml-2">{{ classification.classificationKey }}</span>
+                </td>
+                <td style="width:20%">
+                  <span class="font-bold ml-2">{{ classification.classificationName }}</span>
+                </td>
+                <td style="width:40%"></td>
+                <td  class="flex-wrap gap-2 flex justify-content-start align-items-center">
+                        <img width="25" height="25" class="action" (click)="addSubClassification(classification.id)" src="../../../../../assets/images/svg/add-plus-square.svg">
+                        <img width="25" height="25" class="action" src="../../../../../assets/images/svg/edit.svg">
+                        <img width="25" height="25" class="action" src="../../../../../assets/images/svg/trash.svg">
+<!--                  <button type="button" pButton (click)="addSubClassification(classification.id)" style="width:1rem!important; height: 2rem!important;" size="small" icon="pi pi-plus" [outlined]="true" [text]="true" [raised]="true" severity="primary"></button>-->
+<!--                  <button type="button" pButton style="width:1rem!important; height: 2rem!important;" size="small" icon="pi pi-pencil" [outlined]="true" [text]="true" [raised]="true" severity="warning"></button>-->
+<!--                  <button type="button" pButton style="width:1rem!important; height: 2rem!important;"  size="small" icon="pi pi-times" [outlined]="true" [text]="true" [raised]="true" severity="danger"></button>-->
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="rowexpansion" let-classification>
+          <tr>
+            <td colspan="4">
+              <div class="">
+                <p-table [value]="classification.subClassification" dataKey="subClassification.classificationValueKey">
+                  <ng-template pTemplate="body" let-subClassification>
+                    <tr>
+                        <td style="width:20%">{{ subClassification.classificationValueKey }}</td>
+                        <td style="width:20%"></td>
+                        <td style="width:40%"> {{ subClassification.classificationValueName }} </td>
+                      <td  class="flex-wrap gap-2 flex justify-content-start">
+                            <img class="action" width="25" height="25" src="../../../../../assets/images/svg/edit.svg">
+                            <img class="action" width="25" height="25" src="../../../../../assets/images/svg/trash.svg">
+                      </td>
+                    </tr>
+                  </ng-template>
+                  <ng-template pTemplate="emptymessage">
+                    <tr>
+                      <td colspan="4">There are no order for this product yet.</td>
+                    </tr>
+                  </ng-template>
+                </p-table>
+              </div>
+            </td>
+          </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+<app-dialog id="add-sub-classification">
+  <div header>
+    <span class="p-dialog-title">Add New Subclassification</span>
+  </div>
+  <div class="mt-4" body>
+    @defer (when dialogIsOpen) {
+    <form class="p-fluid" [formGroup]="formGroup">
+      <div formArrayName="fieldGroup">
+        <ng-container *ngFor="let fields of fieldGroup.controls; let i = index;" [formGroupName]="i">
+          <div class="p-formgrid grid mt-2">
+            <div class="field col-5">
+              <span class="p-float-label">
+                <input pInputText formControlName="classificationValueKey" id="classificationValueKey" type="text" required/>
+                <label for="classificationValueKey">Code</label>
+              </span>
+            </div>
+            <div class="field col-5">
+              <p-floatLabel>
+                <input pInputText formControlName="classificationValueName" id="classificationValueName" type="text" required/>
+                <label for="classificationValueName">Name</label>
+              </p-floatLabel>
+            </div>
+            <div class="field col-2 mt-1">
+              <button *ngIf="fieldGroup.length <= 5 " type="button" pButton style="width:1rem!important; height: 2rem!important;"  size="small" icon="pi pi-plus" [outlined]="true" [text]="true" [raised]="true" severity="primary" (click)="addRow()"></button>
+              <button *ngIf="fieldGroup.length > 1" type="button" pButton style="width:1rem!important; height: 2rem!important;"  size="small" icon="pi pi-times" [outlined]="true" [text]="true" [raised]="true" severity="danger" (click)="removeRow(i)"></button>
+            </div>
+          </div>
+          <p-divider *ngIf="fieldGroup.length > 1 && i + 1 != fieldGroup.length" />
+        </ng-container>
+      </div>
+    </form>
+    }
+  </div>
+  <div  class="flex flex-wrap gap-2 justify-content-center" footer>
+    <button pButton label="Cancel" [outlined]="true" severity="secondary" size="small"></button>
+    <button pButton label="Save" [outlined]="true" severity="primary" size="small" (click)="save()"></button>
+  </div>
+</app-dialog>

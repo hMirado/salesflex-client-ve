@@ -26,16 +26,16 @@ export class SidebarComponent {
       {
         label: 'Items',
         items: [
-          { label: 'Classification', icon: 'pi pi-fw pi-slack', routerLink: ['/classification'] },
-          { label: 'Item', icon: 'pi pi-fw pi-barcode', routerLink: ['/uikit/input'] },
+          { label: 'Classification', icon: 'pi pi-fw pi-slack', routerLink: ['classification'] },
+          { label: 'Item', icon: 'pi pi-fw pi-barcode', routerLink: ['item'] },
         ]
       },
       {
         label: 'Sales',
         items: [
-          { label: 'Order', icon: 'pi pi-fw pi-shopping-cart', routerLink: ['/blocks'] },
-          { label: 'Delivery', icon: 'pi pi-fw pi-truck', routerLink: ['/blocks'] },
-          { label: 'Receipt', icon: 'pi pi-fw pi-file', routerLink: ['/blocks'] },
+          { label: 'Order', icon: 'pi pi-fw pi-shopping-cart', routerLink: ['/order'] },
+          { label: 'Delivery', icon: 'pi pi-fw pi-truck', routerLink: ['/delivery'] },
+          { label: 'Invoice', icon: 'pi pi-fw pi-file', routerLink: ['/invoice'] },
         ]
       },
       {
