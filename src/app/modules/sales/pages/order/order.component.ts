@@ -53,26 +53,43 @@ export class OrderComponent implements OnInit, OnDestroy {
   }
 
   draggedOrder: Order | undefined | null;
-  dragStart(order: Order) {
+  fromOrder: string = ''
+  dragStart(order: Order, from: string) {
     this.draggedOrder = order;
+    this.fromOrder = from
   }
 
   dragEnd() {
     this.draggedOrder = null;
   }
-  drop() {
+
+  drop(to: string = '') {
+    console.log(this.fromOrder + ' => ' + to);
+    
     if (this.draggedOrder) {
-      let draggedProductIndex = this.findIndex(this.draggedOrder);
-      this.processingOrder = [...(this.processingOrder as Order[]), this.draggedOrder];
-      this.newOrder = this.newOrder?.filter((val, i) => i != draggedProductIndex);
+      let draggedProductIndex = this.findIndex(this.draggedOrder, this.fromOrder);
+      if (this.fromOrder == 'new' && to == 'processing') {
+        this.newOrder = this.newOrder?.filter((val, i) => i != draggedProductIndex);
+        if (!this.processingOrder.includes(this.draggedOrder)) {
+          this.processingOrder = [...(this.processingOrder as Order[]), this.draggedOrder];
+        }
+      } else if (this.fromOrder == 'processing' && to == 'shipped') {
+        this.processingOrder = this.processingOrder?.filter((val, i) => i != draggedProductIndex);
+        if (!this.shippedOrder.includes(this.draggedOrder)) {
+          this.shippedOrder = [...(this.shippedOrder as Order[]), this.draggedOrder];
+        }
+      }
       this.draggedOrder = null;
     }
   }
 
-  findIndex(order: Order) {
+  findIndex(order: Order, from: string) {
+    let _order;
+    if (from == 'new') _order = this.newOrder;
+    if (from == 'processing') _order = this.processingOrder;
     let index = -1;
-    for (let i = 0; i < (this.newOrder as Order[]).length; i++) {
-      if (order.id === (this.newOrder as Order[])[i].id) {
+    for (let i = 0; i < (_order as Order[]).length; i++) {
+      if (order.id === (_order as Order[])[i].id) {
         index = i;
         break;
       }
