@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit, AfterViewInit  {
       subTitle: '55',
       icon: 'pi-cart-plus',
       iconBg: 'bg-orange-100',
-      iconColor: 'text-orange-500'
+      iconColor: 'text-orange-700'
     }
   }
 

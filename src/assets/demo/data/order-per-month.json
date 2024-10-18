@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "name": "January",
+            "value": 1800
+        },
+        {
+            "name": "February",
+            "value": 2600
+        },
+        {
+            "name": "March",
+            "value": 2000
+        },
+        {
+            "name": "April",
+            "value": 3000
+        },
+        {
+            "name": "May",
+            "value": 2850
+        },
+        {
+            "name": "June",
+            "value": 3000
+        },
+        {
+            "name": "July",
+            "value": 2450
+        },
+        {
+            "name": "August",
+            "value": 1608
+        },
+        {
+            "name": "September",
+            "value": 2420
+        },
+        {
+            "name": "October",
+            "value": 900
+        }
+    ]
+}

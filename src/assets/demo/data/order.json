@@ -2,7 +2,7 @@
     "data": [
         {
             "id": 1,
-            "orderDate": "2024-10-15T12:49:19.492766",
+            "orderDate": "2024-10-15",
             "orderRef": "ORD000001",
             "orderTotalPrice": 125.0,
             "status": {
@@ -21,17 +21,19 @@
                     "itemName": "Accessory-1",
                     "quantity": 2
                 }
-            ]
+            ],
+            "customer": "Leffler LLC",
+            "shipper": "Rinaldo Hurles"
         },
         {
             "id": 2,
-            "orderDate": "2024-10-15T12:49:19.492781",
+            "orderDate": "2024-10-15",
             "orderRef": "ORD000002",
             "orderTotalPrice": 150.0,
             "status": {
                 "id": 1,
                 "statusKey": "shipped",
-                "statusName": "Shipped"
+                "statusName": "Delivered"
             },
             "item": [
                 {
@@ -44,11 +46,13 @@
                     "itemName": "Accessory-2",
                     "quantity": 3
                 }
-            ]
+            ],
+            "customer": "Reilly In",
+            "shipper": "Heinrik Blasoni"
         },
         {
             "id": 3,
-            "orderDate": "2024-10-15T12:49:19.492785",
+            "orderDate": "2024-10-15",
             "orderRef": "ORD000003",
             "orderTotalPrice": 175.0,
             "status": {
@@ -67,11 +71,13 @@
                     "itemName": "Accessory-3",
                     "quantity": 4
                 }
-            ]
+            ],
+            "customer": "Lucita Rolley",
+            "shipper": "Heinrik Blasoni"
         },
         {
             "id": 4,
-            "orderDate": "2024-10-15T12:49:19.492789",
+            "orderDate": "2024-10-15",
             "orderRef": "ORD000004",
             "orderTotalPrice": 200.0,
             "status": {
@@ -90,11 +96,13 @@
                     "itemName": "Accessory-4",
                     "quantity": 5
                 }
-            ]
+            ],
+            "customer": "Johnnie Inchcomb",
+            "shipper": "Kyle Coleiro"
         },
         {
             "id": 5,
-            "orderDate": "2024-10-15T12:49:19.492792",
+            "orderDate": "2024-10-15",
             "orderRef": "ORD000005",
             "orderTotalPrice": 225.0,
             "status": {
@@ -113,17 +121,19 @@
                     "itemName": "Accessory-5",
                     "quantity": 6
                 }
-            ]
+            ],
+            "customer": "Leffler LLC",
+            "shipper": "Janice Casewell"
         },
         {
             "id": 6,
-            "orderDate": "2024-10-15T12:49:19.492795",
+            "orderDate": "2024-10-15",
             "orderRef": "ORD000006",
             "orderTotalPrice": 250.0,
             "status": {
                 "id": 1,
                 "statusKey": "shipped",
-                "statusName": "Shipped"
+                "statusName": "Delivered"
             },
             "item": [
                 {
@@ -136,11 +146,13 @@
                     "itemName": "Accessory-6",
                     "quantity": 7
                 }
-            ]
+            ],
+            "customer": "Kassulke Group",
+            "shipper": "Gloria Comellini"
         },
         {
             "id": 7,
-            "orderDate": "2024-10-15T12:49:19.492800",
+            "orderDate": "2024-10-15",
             "orderRef": "ORD000007",
             "orderTotalPrice": 275.0,
             "status": {
@@ -159,17 +171,19 @@
                     "itemName": "Accessory-7",
                     "quantity": 8
                 }
-            ]
+            ],
+            "customer": "Kautzer Inc",
+            "shipper": "Jeremy Piers"
         },
         {
             "id": 8,
-            "orderDate": "2024-10-15T12:49:19.492805",
+            "orderDate": "2024-10-15",
             "orderRef": "ORD000008",
             "orderTotalPrice": 300.0,
             "status": {
                 "id": 1,
                 "statusKey": "shipped",
-                "statusName": "Shipped"
+                "statusName": "Delivered"
             },
             "item": [
                 {
@@ -182,11 +196,13 @@
                     "itemName": "Accessory-8",
                     "quantity": 9
                 }
-            ]
+            ],
+            "customer": "Sylvester Kean",
+            "shipper": "Byran Fyers"
         },
         {
             "id": 9,
-            "orderDate": "2024-10-15T12:49:19.492810",
+            "orderDate": "2024-10-15",
             "orderRef": "ORD000009",
             "orderTotalPrice": 325.0,
             "status": {
@@ -205,11 +221,13 @@
                     "itemName": "Accessory-9",
                     "quantity": 10
                 }
-            ]
+            ],
+            "customer": "Murielle MacKintosh",
+            "shipper": "Camellia Akram"
         },
         {
             "id": 10,
-            "orderDate": "2024-10-15T12:49:19.492814",
+            "orderDate": "2024-10-15",
             "orderRef": "ORD000010",
             "orderTotalPrice": 350.0,
             "status": {
@@ -228,7 +246,9 @@
                     "itemName": "Accessory-10",
                     "quantity": 11
                 }
-            ]
+            ],
+            "customer": "Schiller, Ebert and O'Reilly",
+            "shipper": "Sammy Jeram"
         }
     ]
 }

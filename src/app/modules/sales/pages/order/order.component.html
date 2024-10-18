@@ -1,112 +1,34 @@
-<div class="card mt-3 flex flex-wrap gap-3 justify-content-between">
-    <div>
-        <div class="bg-primary mt-2 p-2 border-1 surface-border border-round w-25rem font-bold text-center">
-            NEW ORDER
-        </div>
-        <div class="scrollable-div mt-2 p-2 border-1 surface-border border-round w-25rem h-30rem" pDroppable (onDrop)="drop('new')">
-            <p-panel *ngFor="let order of newOrder; let i = index;" class="m-1" [toggleable]="true"
-                     pDraggable (onDragStart)="dragStart(order, 'new')"  (onDragEnd)="dragEnd()"
-            >
-                <ng-template pTemplate="header">
-                    <div class="flex align-items-baseline gap-2">
-                        <span class="font-bold">
-                            Order N. {{order.orderRef}}
-                        </span>
-                        <span class="text-sm">{{ order.orderDate }}</span>
-                    </div>
-                </ng-template>
-                <ng-template pTemplate="body">
-                    <div class="flex align-items-baseline gap-2">
-                        <div class="flex flex-column align-items-start">
-                            <span class="font-bold">
-                                Macejkovic, Schimmel and Keebler
-                            </span>
-                            <span>
-                                52495 Schurz Crossing
-                            </span>
-                        </div>
-                        <div class="flex flex-column">
-                            <span class="text-900">
-                                Lotty Matthaus
-                            </span>
-                            <p>Total ${{ order.orderTotalPrice }}</p>
-                        </div>
-                    </div>
-                </ng-template>
-            </p-panel>
-        </div>
+<div class="grid  mb-5">
+    <div class="col-5 flex flex-wrap gap-4 justify-content-start">
+        <app-card class="col-5" style="padding: 0!important;" [data]="allOrder"></app-card>
+        <app-card class="col-5" style="padding: 0!important;" [data]="todayOrder"></app-card>
+        <app-card class="col-5" style="padding: 0!important;" [data]="delivredOrder"></app-card>
+        <app-card class="col-5" style="padding: 0!important;" [data]="shippedOrder"></app-card>
     </div>
-    <div>
-        <div class="bg-orange mt-2 p-2 border-1 surface-border border-round w-25rem font-bold text-center">
-            ON DELIVERY
-        </div>
-        <div class="scrollable-div mt-2 p-2 border-1 surface-border border-round w-25rem h-30rem" pDroppable (onDrop)="drop('processing')">
-            <p-panel *ngFor="let order of processingOrder; let i = index;" class="m-1" [toggleable]="true"
-                     pDraggable (onDragStart)="dragStart(order, 'processing')"  (onDragEnd)="dragEnd()"
-            >
-                <ng-template pTemplate="header">
-                    <div class="flex align-items-baseline gap-2">
-                        <span class="font-bold">
-                            Order N. {{order.orderRef}}
-                        </span>
-                        <span class="text-sm">{{ order.orderDate }}</span>
-                    </div>
-                </ng-template>
-                <ng-template pTemplate="body">
-                    <div class="flex align-items-baseline gap-2">
-                        <div class="flex flex-column align-items-start">
-                            <span class="font-bold">
-                                Macejkovic, Schimmel and Keebler
-                            </span>
-                            <span>
-                                52495 Schurz Crossing
-                            </span>
-                        </div>
-                        <div class="flex flex-column">
-                            <span class="text-900">
-                                Lotty Matthaus
-                            </span>
-                            <p>Total ${{ order.orderTotalPrice }}</p>
-                        </div>
-                    </div>
-                </ng-template>
-            </p-panel>
-        </div>
-    </div>
-    <div>
-        <div class="bg-success mt-2 p-2 border-1 surface-border border-round w-25rem font-bold text-center">
-            DELIVERED
-        </div>
-        <div class="scrollable-div mt-2 p-2 border-1 surface-border border-round w-25rem h-30rem" pDroppable (onDrop)="drop('shipped')">
-            <p-panel *ngFor="let order of shippedOrder; let i = index;" class="m-1" [toggleable]="true"
-            >
-                <ng-template pTemplate="header">
-                    <div class="flex align-items-baseline gap-2">
-                        <span class="font-bold">
-                            Order N. {{order.orderRef}}
-                        </span>
-                        <span class="text-sm">{{ order.orderDate }}</span>
-                    </div>
-                </ng-template>
-                <ng-template pTemplate="body">
-                    <div class="flex align-items-baseline gap-2">
-                        <div class="flex flex-column align-items-start">
-                            <span class="font-bold">
-                                Macejkovic, Schimmel and Keebler
-                            </span>
-                            <span>
-                                52495 Schurz Crossing
-                            </span>
-                        </div>
-                        <div class="flex flex-column">
-                            <span class="text-900">
-                                Lotty Matthaus
-                            </span>
-                            <p>Total ${{ order.orderTotalPrice }}</p>
-                        </div>
-                    </div>
-                </ng-template>
-            </p-panel>
-        </div>
+    <div class="col-7 card flex gap-3 justify-content-start">
+        <ngx-charts-bar-vertical
+                [view]="view"
+                [results]="data"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="showLegend"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [showGridLines]="false"
+                [showDataLabel]="showDataLabel">
+        </ngx-charts-bar-vertical>
     </div>
 </div>
+
+<div class="flex gap-3 justify-content-start">
+    <p-button label="Order Summary" [severity]="getSeverity(0)" [raised]="true" size="small" (onClick)="chooseTabView(0)"></p-button>
+    <p-button label="Order List" [severity]="getSeverity(1)" [raised]="true" size="small" (onClick)="chooseTabView(1)"></p-button>
+</div>
+
+@defer (when activeIndex() === 0) {
+    <app-order-summary *ngIf="activeIndex() === 0"></app-order-summary>
+}
+@defer (when activeIndex() === 1) {
+    <app-order-list *ngIf="activeIndex() === 1"></app-order-list>
+}

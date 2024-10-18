@@ -15,4 +15,11 @@ export class OrderService {
         .then(res => res.data as Order[])
         .then(data => data);
   }
+
+  getOrderGraph() {
+    return this.http.get<any>('assets/demo/data/order-per-month.json')
+        .toPromise()
+        .then(res => res.data)
+        .then(data => data);
+  }
 }

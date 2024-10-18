@@ -1,0 +1,157 @@
+<div class="mt-5 pt-3 flex flex-wrap gap-2 justify-content-between">
+    <div class="flex flex-wrap gap-2 justify-content-start">
+        <span class="font-bold mt-3">Filters : </span>
+        <span class="p-float-label">
+            <input pInputText id="order" type="text"/>
+            <label for="order">Order N.</label>
+        </span>
+        <span class="p-float-label">
+            <p-calendar id="date" dateFormat="yy-mm-dd"></p-calendar>
+            <label for="date">Date</label>
+        </span>
+        <span class="p-float-label">
+            <p-dropdown
+                    [options]="status"
+                    optionLabel="name"
+                    placeholder="Select Status"
+                    [showClear]="true"
+                    id="status"
+            >
+            </p-dropdown>
+            <label for="status">Status</label>
+        </span>
+    </div>
+</div>
+<div class="card overflow-x mt-3 flex gap-3 justify-content-between">
+    <div>
+        <div class="bg-primary mt-2 p-2 border-1 surface-border border-round w-25rem font-bold text-center">
+            NEW ORDER
+        </div>
+        <div class="scrollable-div mt-2 p-2 border-1 surface-border border-round w-25rem h-30rem" pDroppable (onDrop)="drop('new')">
+            <p-panel *ngFor="let order of newOrder; let i = index;" class="m-1"
+                     pDraggable (onDragStart)="dragStart(order, 'new')"  (onDragEnd)="dragEnd()"
+            >
+                <ng-template pTemplate="header">
+                    <div class="flex align-items-baseline gap-2">
+                        <span class="font-bold">
+                            Order N. {{order.orderRef}}
+                        </span>
+                        <span class="text-sm">{{ order.orderDate }}</span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="body">
+                    <div class="flex align-items-baseline gap-2">
+                        <div class="flex flex-column align-items-start">
+                            <span class="font-bold">
+                                Macejkovic, Schimmel and Keebler
+                            </span>
+                            <span>
+                                52495 Schurz Crossing
+                            </span>
+                        </div>
+                        <div class="flex flex-column">
+                            <span class="text-900">
+                                Lotty Matthaus
+                            </span>
+                            <p>Total ${{ order.orderTotalPrice }}</p>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="footer">
+                    <div class="flex flex-wrap align-items-center justify-content-between gap-3">
+                        <div class="flex align-items-center gap-2">
+                            <p-button icon="pi pi-eye" rounded="true" text="true" size="small"></p-button>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-panel>
+        </div>
+    </div>
+    <div>
+        <div class="bg-orange mt-2 p-2 border-1 surface-border border-round w-25rem font-bold text-center">
+            ON DELIVERY
+        </div>
+        <div class="scrollable-div mt-2 p-2 border-1 surface-border border-round w-25rem h-30rem" pDroppable (onDrop)="drop('processing')">
+            <p-panel *ngFor="let order of processingOrder; let i = index;" class="m-1"
+                     pDraggable (onDragStart)="dragStart(order, 'processing')"  (onDragEnd)="dragEnd()"
+            >
+                <ng-template pTemplate="header">
+                    <div class="flex align-items-baseline gap-2">
+                        <span class="font-bold">
+                            Order N. {{order.orderRef}}
+                        </span>
+                        <span class="text-sm">{{ order.orderDate }}</span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="body">
+                    <div class="flex align-items-baseline gap-2">
+                        <div class="flex flex-column align-items-start">
+                            <span class="font-bold">
+                                Macejkovic, Schimmel and Keebler
+                            </span>
+                            <span>
+                                52495 Schurz Crossing
+                            </span>
+                        </div>
+                        <div class="flex flex-column">
+                            <span class="text-900">
+                                Lotty Matthaus
+                            </span>
+                            <p>Total ${{ order.orderTotalPrice }}</p>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="footer">
+                    <div class="flex flex-wrap align-items-center justify-content-between gap-3">
+                        <div class="flex align-items-center gap-2">
+                            <p-button icon="pi pi-eye" rounded="true" text="true" size="small"></p-button>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-panel>
+        </div>
+    </div>
+    <div>
+        <div class="bg-success mt-2 p-2 border-1 surface-border border-round w-25rem font-bold text-center">
+            DELIVERED
+        </div>
+        <div class="scrollable-div mt-2 p-2 border-1 surface-border border-round w-25rem h-30rem" pDroppable (onDrop)="drop('shipped')">
+            <p-panel *ngFor="let order of shippedOrder; let i = index;" class="m-1"
+            >
+                <ng-template pTemplate="header">
+                    <div class="flex align-items-baseline gap-2">
+                        <span class="font-bold">
+                            Order N. {{order.orderRef}}
+                        </span>
+                        <span class="text-sm">{{ order.orderDate }}</span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="body">
+                    <div class="flex align-items-baseline gap-2">
+                        <div class="flex flex-column align-items-start">
+                            <span class="font-bold">
+                                Macejkovic, Schimmel and Keebler
+                            </span>
+                            <span>
+                                52495 Schurz Crossing
+                            </span>
+                        </div>
+                        <div class="flex flex-column">
+                            <span class="text-900">
+                                Lotty Matthaus
+                            </span>
+                            <p>Total ${{ order.orderTotalPrice }}</p>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="footer">
+                    <div class="flex flex-wrap align-items-center justify-content-between gap-3">
+                        <div class="flex align-items-center gap-2">
+                            <p-button icon="pi pi-eye" rounded="true" text="true" size="small"></p-button>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-panel>
+        </div>
+    </div>
+</div>

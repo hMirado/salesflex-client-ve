@@ -1,3 +1,5 @@
+import {Customer} from "./customer";
+
 export interface Order {
     id: number;
     orderDate: Date;
@@ -5,6 +7,8 @@ export interface Order {
     orderTotalPrice: number;
     status: OrderStatus;
     item: OrderItem[];
+    customer: String;
+    shipper: String;
 }
 
 export interface OrderStatus {

@@ -34,8 +34,15 @@ export class SidebarComponent {
         label: 'Sales',
         items: [
           { label: 'Order', icon: 'pi pi-fw pi-shopping-cart', routerLink: ['/order'] },
-          { label: 'Delivery', icon: 'pi pi-fw pi-truck', routerLink: ['/delivery'] },
+          // { label: 'Delivery', icon: 'pi pi-fw pi-truck', routerLink: ['/delivery'] },
           { label: 'Invoice', icon: 'pi pi-fw pi-file', routerLink: ['/invoice'] },
+        ]
+      },
+      {
+        label: 'Location',
+        items: [
+          { label: 'Tracking', icon: 'pi pi-fw pi-map-marker', routerLink: ['/location/tracking'] },
+          { label: 'Map Tracking', icon: 'pi pi-fw pi-map', routerLink: ['/location/map-tracking'] },
         ]
       },
       {

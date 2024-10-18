@@ -1,0 +1,46 @@
+<div class="pt-3 flex flex-wrap gap-2 justify-content-between">
+    <div class="flex flex-wrap gap-2 justify-content-start">
+        <span class="font-bold mt-3">Select date and shipper : </span>
+        <span class="p-float-label">
+            <p-calendar id="date" dateFormat="yy-mm-dd"></p-calendar>
+            <label for="date">Date</label>
+        </span>
+        <span class="p-float-label">
+            <p-dropdown
+                    [options]="shipper"
+                    optionLabel="name"
+                    placeholder="Select Shipper"
+                    [showClear]="true"
+                    id="shipper"
+            >
+            </p-dropdown>
+            <label for="shipper">Shipper</label>
+        </span>
+    </div>
+</div>
+
+<div class="card overflow-x mt-3 flex flex-column gap-3 justify-content-between my-min-h-screen h-30rem">
+    <div class="mb-6 flex flex-column gap-0 justify-content-between">
+        <h4 class="font-bold">Shipper: Heinrik Blasoni</h4>
+        <span class="font-bold"><i class="pi pi-calendar"></i> 2024-10-17</span>
+    </div>
+    <ng-container *ngFor="let event of events; let eLast = last">
+        <div class="p-timeline p-component p-timeline-horizontal p-timeline-top w-full">
+            <div *ngFor="let e of event; let last = last" class="p-timeline-event" [attr.data-pc-section]="'event'">
+                <div class="p-timeline-event-opposite" [attr.data-pc-section]="'opposite'">
+                    <p>{{ e.date }}</p>
+                    <p class="font-bold">{{ e.location }}</p>
+                </div>
+                <div class="p-timeline-event-separator" [attr.data-pc-section]="'separator'">
+                    <div class="p-timeline-event-marker" [attr.data-pc-section]="'marker'" [appMarkerDelivered]="e.status">
+                        <i [ngClass]="e.status ? 'pi pi-check text-white check-marker' : 'pi pi-map-marker check-marker'"></i>
+                    </div>
+                    <div class="p-timeline-event-connector" *ngIf="!eLast || !last" [appLine]="e.status"></div>
+                </div>
+                <div class="p-timeline-event-content" [attr.data-pc-section]="'content'">
+                    <p *ngIf="e.invoice">Order No {{ e.invoice }}</p>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

@@ -1,1 +1,206 @@
-<p>invoice works!</p>
+<div class="flex flex-grap gap-4 justify-content-start">
+    <div class="card col-3">
+        <p-scrollPanel [style]="{ width: '100%', height: '40rem' }">
+            <div class="mb-2">
+                <h5 class="font-bold">Invoice List</h5>
+                <p-iconField iconPosition="left">
+                    <p-inputIcon styleClass="pi pi-search" />
+                    <input type="text" class="p-inputtext p-component p-element" style="width:100%" pInputText placeholder="Search" />
+                </p-iconField>
+            </div>
+            <div class=" card mt-3">
+                <div class="flex align-content-end justify-content-between gap-2">
+                    <div class="flex flex-column align-items-start">
+                        <span class="font-bold mb-4">
+                            DL339V6ZN
+                        </span>
+                        <ng-container>
+                            <span class="font-semibold mb-2">Grady, Langosh and Mitchell</span>
+                            <span>$468</span>
+                        </ng-container>
+                    </div>
+                    <div class="align-content-end text-end" >
+                        <i class="pi pi-calendar"></i> 2024/06/10
+                    </div>
+                </div>
+            </div>
+            <div class=" card mt-3">
+                <div class="flex align-content-end justify-content-between gap-2">
+                    <div class="flex flex-column align-items-start">
+                        <span class="font-bold mb-4">
+                            3TTIFVGE3
+                        </span>
+                        <ng-container>
+                            <span class="font-semibold mb-2">Graham-Mueller</span>
+                            <span>$236</span>
+                        </ng-container>
+                    </div>
+                    <div class="align-content-end text-end" >
+                        <i class="pi pi-calendar"></i> 2024/09/11
+                    </div>
+                </div>
+            </div>
+            <div class=" card mt-3">
+                <div class="flex align-content-end justify-content-between gap-2">
+                    <div class="flex flex-column align-items-start">
+                        <span class="font-bold mb-4">
+                            L8VIE2JZP
+                        </span>
+                        <ng-container>
+                            <span class="font-semibold mb-2">Bernier, Runte and Kozey</span>
+                            <span>$75</span>
+                        </ng-container>
+                    </div>
+                    <div class="align-content-end text-end" >
+                        <i class="pi pi-calendar"></i> 2024/10/01
+                    </div>
+                </div>
+            </div>
+            <div class=" card mt-3">
+                <div class="flex align-content-end justify-content-between gap-2">
+                    <div class="flex flex-column align-items-start">
+                        <span class="font-bold mb-4">
+                            UAYFEBHXJ
+                        </span>
+                        <ng-container>
+                            <span class="font-semibold mb-2">Skiles Inc</span>
+                            <span>$97</span>
+                        </ng-container>
+                    </div>
+                    <div class="align-content-end text-end" >
+                        <i class="pi pi-calendar"></i> 2024/02/05
+                    </div>
+                </div>
+            </div>
+            <div class=" card mt-3">
+                <div class="flex align-content-end justify-content-between gap-2">
+                    <div class="flex flex-column align-items-start">
+                        <span class="font-bold mb-4">
+                            ADYN3MO47
+                        </span>
+                        <ng-container>
+                            <span class="font-semibold mb-2">Waters, Pouros and Nolan</span>
+                            <span>$259</span>
+                        </ng-container>
+                    </div>
+                    <div class="align-content-end text-end" >
+                        <i class="pi pi-calendar"></i> 2024/02/26
+                    </div>
+                </div>
+            </div>
+        </p-scrollPanel>
+    </div>
+    <div class="card col-9 flex flex-column">
+        <p-scrollPanel [style]="{ width: '100%', height: '42rem', 'background-color':'#e2e8f02e'}">
+            <div class="flex flex-grap grap-5 justify-content-between">
+                <div class="text-center mt-2">
+                    <img src="../../../../../assets/images/logo.png" width="200"/>
+                    <br>
+                    <h5 class="mt-0 font-bold">Company Name</h5>
+                </div>
+                <div class="flex flex-column">
+                    <div class="text-right mt-4 mr-4">
+                        <p class="font-bold mb-1">Fredek Leamy</p>
+                        <p class="mb-1">+(62) 151 503 4158</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 flex flex-grap grap-5 justify-content-around">
+                <div>
+                    <p class="font-bold m-0">DL339V6ZN</p>
+                    <p>Invoice No</p>
+                </div>
+                <p-divider type="dashed" layout="vertical" />
+                <div>
+                    <p class="font-bold  m-0">2024/06/10</p>
+                    <p>Invoice date</p>
+                </div>
+                <p-divider type="dashed" layout="vertical" />
+                <div>
+                    <p class="font-bold  m-0">$468</p>
+                    <p>Total Amount</p>
+                </div>
+            </div>
+            <div class="mt-6 ml-4 mr-4 flex flex-grap grap-5 justify-content-start">
+                <div>
+                    <p class="font-bold mb-1">Grady, Langosh and Mitchell</p>
+                    <p class="mb-1">3766 Marquette Drive</p>
+                    <p class="mb-1">+(86) 536 330 8506</p>
+                </div>
+            </div>
+            <div class="mt-6 ml-4 mr-4">
+                <table width="100%">
+                    <thead class="h-4rem font-semibold">
+                         <tr class="text-justify">
+                            <th class="w-4rem">#</th>
+                            <th>Item</th>
+                            <th>Rate</th>
+                            <th class="w-10rem">Quantity</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="h-4rem">
+                            <td class="font-semibold w-4rem">1</td>
+                            <td>Sun - Dried Tomatoes</td>
+                            <td>$14.00</td>
+                            <td class="w-10rem">10</td>
+                            <td>$140</td>
+                        </tr>
+                        <tr class="h-4rem">
+                            <td class="font-semibold w-4rem">2</td>
+                            <td>Glucose</td>
+                            <td>$25.00</td>
+                            <td class="w-10rem">4</td>
+                            <td>$100</td>
+                        </tr>
+                        <tr class="h-4rem">
+                            <td class="w-4rem font-semibold">4</td>
+                            <td>Chips Potato Reg 43g</td>
+                            <td>$25</td>
+                            <td class="w-12rem">6</td>
+                            <td>$150</td>
+                        </tr>
+                        <tr class="h-4rem">
+                            <td class="border-0"></td>
+                            <td class="border-0"></td>
+                            <td class="border-0"></td>
+                            <td>SubTotal</td>
+                            <td>$390</td>
+                        </tr>
+                        <tr class="h-4rem">
+                            <td class="border-0"></td>
+                            <td class="border-0"></td>
+                            <td class="border-0"></td>
+                            <td>TVA (20%)</td>
+                            <td>$78</td>
+                        </tr>
+                        <tr class="h-4rem">
+                            <td class="border-0"></td>
+                            <td class="border-0"></td>
+                            <td class="border-0"></td>
+                            <td>Discount</td>
+                            <td>$0</td>
+                        </tr>
+                        <tr class="h-4rem font-semibold">
+                            <td class="border-0"></td>
+                            <td class="border-0"></td>
+                            <td class="border-0"></td>
+                            <td>Total Amount</td>
+                            <td>$468</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-8  ml-4 mr-4">
+                <p-messages severity="info">
+                    <ng-template pTemplate>
+                        <div class="ml-2">
+                            <span class="font-bold">NOTES: </span>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aut cupiditate eligendi magni nobis quisquam recusandae. Debitis deleniti eos ex fugit ipsa ipsum molestias, mollitia officia quidem reiciendis saepe unde.</div>
+                    </ng-template>
+                </p-messages>
+            </div>
+        </p-scrollPanel>
+    </div>
+</div>
